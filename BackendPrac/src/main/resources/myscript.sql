@@ -1,0 +1,1 @@
+update PRODUCT set DESCRIPTION='Wear It And Get Set Go......' where PRODUCT_ID=1001
