@@ -275,7 +275,9 @@ a:hover {
 						<li><a href="#">Contact Us</a></li>
 						</c:if>
 						<c:if test="${pageContext.request.userPrincipal.name != null}">
-						<li><a href="${context}/registration.obj">Update Profile</a></li>
+						<li><a href="${context}/index">Home</a></li>
+						<li><a href="${context}/user/updateinfo">Update Profile</a></li>
+						<li><a href="${context}/user/updatepwd">Update Password</a></li>
 						<li><a href="${context}/user/usercart">View Cart</a></li>
 						<li><a href="${context}/logout">Logout</a></li>
 						<li class="divider"></li>

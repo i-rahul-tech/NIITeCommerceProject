@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <c:set var="context" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,9 +25,10 @@ height:300px
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp" />
-
-</body>
 <div class="container" style="margin:15px 0 0 10px;">
+	<c:if test="${param.msg != null}">
+	<div><span class="text-success">${param.msg}</span></div>
+	</c:if>
     <div class="row">
     <c:forEach items="${prod_list}" var="a">
         <div class="col-sm-4">
@@ -39,7 +41,7 @@ height:300px
                 </div>
                 <div class="space-ten"></div>
                 <div class="btn-ground text-center">
-                    <a href="" class="btn btn-primary"><i class="fa fa-shopping-cart"></i> Add To Cart</a>
+                    <a href="${context}/addtocart?pid=${a.prod_id}" class="btn btn-primary" id="addcart" onclick="add2cart()"><i class="fa fa-shopping-cart"></i> Add To Cart</a>
                     <a href="product/display?pid=${a.prod_id}" class="btn btn-primary"><i class="fa fa-search"></i> Quick View</a>
                 </div>
                 <div class="space-ten"></div>
@@ -49,4 +51,11 @@ height:300px
            </div>
     </div>
     <jsp:include page="/WEB-INF/views/footer.jsp" />
+    <script>
+    function add2cart()
+    {
+    	//alert("Product Added To Cart");
+    }
+    </script>
+ </body>
 </html>

@@ -16,7 +16,7 @@ font-weight:bold;
 </style>
 </head>
 <body>
-<div class="container-fluid" style="background:#ecf2f9;height:40px;border-top:1px solid black;margin-top:5px;">
+<div class="container-fluid" style="background:#ecf2f9;height:40px;margin-top:5px;">
 <div class="navbar navbar-default navbar-fixed-bottom">
     <div class="container">
     <div class="row">
@@ -26,7 +26,7 @@ font-weight:bold;
       </p>
      </div>
      <div class="col-sm-6" style="margin:8px 0 0 20%;">
-      <form action="" method="get">
+      <form action="subscribe/user" method="get">
       <div class="input-group">
       <input type="email" id="userid" name="email_sbc" class="form-control" placeholder="abc@gmail.com" onkeydown="return check1(event)">
       <span class="input-group-btn">
